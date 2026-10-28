@@ -11,19 +11,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ahmad.app.ui.theme.AhmadAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AhmadAppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    MainScreen()
-                }
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = MaterialTheme.colorScheme.background
+            ) {
+                MainScreen()
             }
         }
     }
@@ -31,7 +28,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
-    // حالة لتخزين النص اللي هيتغير مع الضغط
     var messageText by remember { mutableStateOf("أهلاً بك يا أبو حميد في أول تطبيق ليك!") }
     var clickCount by remember { mutableIntStateOf(0) }
 
